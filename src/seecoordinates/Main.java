@@ -19,7 +19,7 @@ class SendCoordinates extends PluginTask<Main> {
 	@Override
 	public void onRun(int currentTick) {
 		for (Player player : Server.getInstance().getOnlinePlayers().values()) {
-			player.sendTip("\n\n\n[" + String.format("%.2f", player.getX()) + " " + String.format("%.2f", player.getY()) + " " + String.format("%.2f", player.getZ()) + "]");
+			player.sendTip(String.format("[X: %.2f Y: %.2f Z: %.2f]\n[yaw: %.2f pitch: %.2f]", player.getX(), player.getY(), player.getZ(), player.getYaw(), player.getPitch()));
 		}
 	}
 }
